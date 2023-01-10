@@ -1,3 +1,4 @@
+import { Posts } from './components/Posts'
 import { Profile } from './components/Profile'
 import { SearchBar } from './components/SearchBar'
 import { BlogContent } from './styles'
@@ -8,6 +9,7 @@ export function Home() {
       <BlogContent>
         <Profile />
         <SearchBar />
+        <Posts />
       </BlogContent>
     </main>
   )

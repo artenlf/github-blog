@@ -17,6 +17,7 @@ export const SearchBarContainer = styled.div`
   }
 
   span {
+    align-self: center;
     color: ${(props) => props.theme['base-span']};
     font-size: 0.875rem;
     grid-area: 1 / 2 / 2 / 3;
