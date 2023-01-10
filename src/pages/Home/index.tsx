@@ -1,3 +1,12 @@
+import { Profile } from './components/Profile'
+import { BlogContent } from './styles'
+
 export function Home() {
-  return <div></div>
+  return (
+    <main>
+      <BlogContent>
+        <Profile />
+      </BlogContent>
+    </main>
+  )
 }

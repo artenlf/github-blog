@@ -8,6 +8,8 @@ export const HeaderContainer = styled.header`
   height: 18.5rem;
 
   img {
-    margin: auto;
+    margin: 4rem auto;
+    max-height: 6.125rem;
+    max-width: 9.25rem;
   }
 `
