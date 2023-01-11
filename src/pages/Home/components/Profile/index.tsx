@@ -14,8 +14,8 @@ export function Profile() {
       <img src="https://github.com/artenlf.png" alt="" />
       <h2>Luís Felipe Arten</h2>
       <Link className="link" to="https://github.com/artenlf">
-        GitHub
-        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="icon" />
+        <span>GitHub</span>
+        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
       </Link>
       <p>
         Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra

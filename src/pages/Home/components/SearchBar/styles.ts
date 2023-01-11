@@ -26,6 +26,7 @@ export const SearchBarContainer = styled.div`
 `
 export const SearchBarInput = styled.input`
   align-items: center;
+  color: ${(props) => props.theme['base-text']};
   display: flex;
   gap: 0.5rem;
   background: ${(props) => props.theme['base-input']};

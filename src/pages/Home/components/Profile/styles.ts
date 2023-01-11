@@ -34,8 +34,8 @@ export const ProfileContainer = styled.div`
     text-decoration: none;
     text-transform: uppercase;
 
-    .icon {
-      margin-left: 0.5rem;
+    span {
+      margin-right: 0.5rem;
     }
   }
 
