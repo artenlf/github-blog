@@ -23,5 +23,11 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
   }
   
-
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5.5rem;
+  }
 `
