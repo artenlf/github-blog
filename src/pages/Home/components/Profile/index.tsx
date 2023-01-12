@@ -5,7 +5,6 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
 import { useContextSelector } from 'use-context-selector'
 import { GitHubDataContext } from '../../../../contexts/GitHubDataContext'
 import { ProfileContainer } from './styles'
@@ -19,10 +18,15 @@ export function Profile() {
     <ProfileContainer>
       <img src={userProfileData.avatar_url} alt="" />
       <h2>{userProfileData.name}</h2>
-      <Link className="link" to={userProfileData.html_url}>
+      <a
+        className="link"
+        href={userProfileData.html_url}
+        target="_blank"
+        rel="noreferrer"
+      >
         <span>GitHub</span>
         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-      </Link>
+      </a>
       <p>{userProfileData.bio}</p>
       <div>
         <span>
