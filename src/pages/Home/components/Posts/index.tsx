@@ -1,32 +1,34 @@
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+import { Link } from 'react-router-dom'
+import { useContextSelector } from 'use-context-selector'
+import { GitHubDataContext } from '../../../../contexts/GitHubDataContext'
 import { PostsContainer, PostsContent } from './styles'
 
 export function Posts() {
+  const userIssues = useContextSelector(GitHubDataContext, (context) => {
+    return context.userIssues
+  })
+
   return (
     <PostsContainer>
-      <PostsContent>
-        <h2>JavaScript data types and data structures</h2>
-        <span>Há 1 dia</span>
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in JavaScript and what
-          properties they have. These can be used to build other data
-          structures. Wherever possible, comparisons with other languages are
-          drawn.
-        </p>
-      </PostsContent>
-      <PostsContent>
-        <h2>JavaScript data types and data structures</h2>
-        <span>Há 1 dia</span>
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in JavaScript and what
-          properties they have. These can be used to build other data
-          structures. Wherever possible, comparisons with other languages are
-          drawn.
-        </p>
-      </PostsContent>
+      {userIssues.map((issue) => {
+        return (
+          <PostsContent key={issue.id}>
+            <h2>
+              <Link to="/issue">{issue.title}</Link>
+            </h2>
+
+            <span>
+              {formatDistanceToNow(new Date(issue.created_at), {
+                addSuffix: true,
+                locale: ptBR,
+              })}
+            </span>
+            <p>{issue.body}</p>
+          </PostsContent>
+        )
+      })}
     </PostsContainer>
   )
 }

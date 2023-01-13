@@ -30,4 +30,8 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     margin-top: -5.5rem;
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `

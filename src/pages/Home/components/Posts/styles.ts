@@ -32,6 +32,7 @@ export const PostsContent = styled.div`
     font-size: 0.875rem;
     grid-area: 1 / 5 / 2 / 6;
     line-height: 2.3;
+    min-width: 5rem;
   }
 
   p {
