@@ -1,38 +1,48 @@
-/* eslint-disable */
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faArrowLeft,
   faArrowUpRightFromSquare,
   faCalendarDay,
-  faComment
+  faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 import { Link } from 'react-router-dom'
+import { IssueTitleProps } from '../../index'
 import { TitleContainer } from './styles'
 
-export function Title() {
+export function Title({ issue }: IssueTitleProps) {
   return (
     <TitleContainer>
       <Link className="return" to="/">
         <FontAwesomeIcon icon={faArrowLeft} />
         <span>Voltar</span>
       </Link>
-      <Link className="repo" to="#">
+      <a className="repo">
         <span>Ver no GitHub</span>
         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-      </Link>
-      <h1>JavaScript data types and data structures</h1>
+      </a>
+      <h1>{issue.title}</h1>
       <div>
         <span>
           <FontAwesomeIcon icon={faGithub} className="icon" />
-          artenlf
+          {issue.user ? issue.user.login : ''}
         </span>
         <span>
           <FontAwesomeIcon icon={faCalendarDay} className="icon" />
-          Há 1 dia
+          {issue.created_at
+            ? formatDistanceToNow(new Date(issue.created_at), {
+                addSuffix: true,
+                locale: ptBR,
+              })
+            : ''}
         </span>
         <span>
-          <FontAwesomeIcon icon={faComment} className="icon" /> 5 comentários
+          <FontAwesomeIcon icon={faComment} className="icon" />
+          {issue.comments > 1
+            ? `${issue.comments} comentários`
+            : `${issue.comments} comentário`}
         </span>
       </div>
     </TitleContainer>

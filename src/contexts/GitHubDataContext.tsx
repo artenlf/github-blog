@@ -13,16 +13,17 @@ interface UserProfileDataProps {
   avatar_url: string
 }
 
-interface UserIssuesProps {
+export interface UserIssuesProps {
+  user: any
   id: number
   number: number
   title: string
-  created_at: string
   body: string
+  created_at: string
   comments: number
 }
 
-interface GitHubDataContextType {
+export interface GitHubDataContextType {
   userProfileData: UserProfileDataProps
   userIssues: UserIssuesProps[]
   issue: UserIssuesProps

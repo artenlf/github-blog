@@ -16,7 +16,7 @@ export function Posts() {
         return (
           <PostsContent key={issue.id}>
             <h2>
-              <Link to="/issue">{issue.title}</Link>
+              <Link to={`/issue/${issue.number}`}>{issue.title}</Link>
             </h2>
 
             <span>
