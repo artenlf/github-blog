@@ -8,7 +8,7 @@ import {
 import { Article } from './components/Article'
 import { Title } from './components/Title'
 
-export interface IssueTitleProps {
+export interface IssueProps {
   issue: UserIssuesProps
 }
 

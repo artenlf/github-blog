@@ -1,15 +1,10 @@
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Link } from 'react-router-dom'
-import { useContextSelector } from 'use-context-selector'
-import { GitHubDataContext } from '../../../../contexts/GitHubDataContext'
+import { IssueProps } from '../../index'
 import { PostsContainer, PostsContent } from './styles'
 
-export function Posts() {
-  const userIssues = useContextSelector(GitHubDataContext, (context) => {
-    return context.userIssues
-  })
-
+export function Posts({ userIssues }: IssueProps) {
   return (
     <PostsContainer>
       {userIssues.map((issue) => {

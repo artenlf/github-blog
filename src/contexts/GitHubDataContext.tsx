@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { createContext } from 'use-context-selector'
 import { api } from '../lib/axios'
 
@@ -30,6 +30,7 @@ export interface GitHubDataContextType {
   fetchUserProfileData: () => Promise<void>
   fetchUserIssues: () => Promise<void>
   fetchIssueData: (issueNumber: number) => Promise<void>
+  fetchUserIssuesSearch: (query?: string) => Promise<void>
 }
 
 interface GitHubDataProviderProps {
@@ -67,19 +68,15 @@ export function GitHubDataProvider({ children }: GitHubDataProviderProps) {
   }
 
   // repos/artenlf/github-blog/issues
-  // const fetchUserIssues = useCallback(async (query?: string) => {
-  //   const response = await api.get(
-  //     'repos/rocketseat-education/reactjs-github-blog-challenge/issues',
-  //     {
-  //       params: {
-  //         _sort: 'createdAt',
-  //         _order: 'desc',
-  //         q: query,
-  //       },
-  //     },
-  //   )
-  //   setUserIssues(response.data)
-  // }, [])
+  const fetchUserIssuesSearch = useCallback(async (query?: string) => {
+    const response = await api.get(`search/issues`, {
+      params: {
+        _sort: 'createdAt',
+        q: `${query}repo:rocketseat-education/reactjs-github-blog-challenge`,
+      },
+    })
+    setUserIssues(response.data.items)
+  }, [])
 
   useEffect(() => {
     fetchUserProfileData()
@@ -95,6 +92,7 @@ export function GitHubDataProvider({ children }: GitHubDataProviderProps) {
         fetchUserProfileData,
         fetchUserIssues,
         fetchIssueData,
+        fetchUserIssuesSearch,
       }}
     >
       {children}

@@ -9,10 +9,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Link } from 'react-router-dom'
-import { IssueTitleProps } from '../../index'
+import { IssueProps } from '../../index'
 import { TitleContainer } from './styles'
 
-export function Title({ issue }: IssueTitleProps) {
+export function Title({ issue }: IssueProps) {
   return (
     <TitleContainer>
       <Link className="return" to="/">
