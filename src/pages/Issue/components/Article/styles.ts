@@ -6,6 +6,7 @@ export const ArticleContainer = styled.article`
   width: 54rem;
 
   img {
+    display: flex;
     margin: 2rem auto;
     max-width: 50rem;
   }

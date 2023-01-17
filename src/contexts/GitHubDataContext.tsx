@@ -53,15 +53,13 @@ export function GitHubDataProvider({ children }: GitHubDataProviderProps) {
   }
 
   async function fetchUserIssues() {
-    const response = await api.get(
-      'repos/rocketseat-education/reactjs-github-blog-challenge/issues',
-    )
+    const response = await api.get('repos/artenlf/github-blog/issues')
     setUserIssues(response.data)
   }
 
   async function fetchIssueData(issueNumber: number) {
     const response = await api.get(
-      `repos/rocketseat-education/reactjs-github-blog-challenge/issues/${issueNumber}`,
+      `repos/artenlf/github-blog/issues/${issueNumber}`,
     )
 
     setIssue(response.data)
@@ -72,7 +70,7 @@ export function GitHubDataProvider({ children }: GitHubDataProviderProps) {
     const response = await api.get(`search/issues`, {
       params: {
         _sort: 'createdAt',
-        q: `${query}repo:rocketseat-education/reactjs-github-blog-challenge`,
+        q: `${query}repo:artenlf/github-blog`,
       },
     })
     setUserIssues(response.data.items)

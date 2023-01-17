@@ -19,7 +19,12 @@ export function Title({ issue }: IssueProps) {
         <FontAwesomeIcon icon={faArrowLeft} />
         <span>Voltar</span>
       </Link>
-      <a className="repo">
+      <a
+        className="repo"
+        href={`https://github.com/rocketseat-education/reactjs-github-blog-challenge/issues/${issue.number}`}
+        target="_blank"
+        rel="noreferrer"
+      >
         <span>Ver no GitHub</span>
         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
       </a>
