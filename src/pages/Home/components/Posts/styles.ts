@@ -35,7 +35,7 @@ export const PostsContent = styled.div`
     min-width: 5rem;
   }
 
-  p {
+  .article {
     grid-area: 2 / 1 / 3 / 6;
     display: -webkit-box;
     -webkit-box-orient: vertical;
