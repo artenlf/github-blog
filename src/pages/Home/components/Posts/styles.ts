@@ -1,11 +1,11 @@
+import ReactPaginate from 'react-paginate'
 import styled from 'styled-components'
 
 export const PostsContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 15rem;
+  margin: 3rem 0;
   width: 54rem;
 `
 
@@ -43,5 +43,38 @@ export const PostsContent = styled.div`
     -webkit-line-clamp: 4;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+`
+export const Pagination = styled(ReactPaginate)`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  width: 54rem;
+
+  li {
+    display: flex;
+    text-decoration: none;
+  }
+
+  a {
+    border-radius: 99px;
+    color: ${(props) => props.theme['base-subtitle']};
+    padding: 0 0.75rem;
+  }
+
+  .active {
+    border-radius: 99px;
+    background-color: ${(props) => props.theme.blue};
+  }
+
+  .previous,
+  .next {
+    font-weight: bold;
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
   }
 `

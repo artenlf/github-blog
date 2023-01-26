@@ -65,7 +65,6 @@ export function GitHubDataProvider({ children }: GitHubDataProviderProps) {
     setIssue(response.data)
   }
 
-  // repos/artenlf/github-blog/issues
   const fetchUserIssuesSearch = useCallback(async (query?: string) => {
     const response = await api.get(`search/issues`, {
       params: {
