@@ -1,4 +1,4 @@
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNowStrict } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Link } from 'react-router-dom'
@@ -11,12 +11,12 @@ export function Posts({ userIssues }: IssueProps) {
       {userIssues.map((issue) => {
         return (
           <PostsContent key={issue.id}>
-            <h2>
+            <h2 className="title">
               <Link to={`/issue/${issue.number}`}>{issue.title}</Link>
             </h2>
 
-            <span>
-              {formatDistanceToNow(new Date(issue.created_at), {
+            <span className="date">
+              {formatDistanceToNowStrict(new Date(issue.created_at), {
                 addSuffix: true,
                 locale: ptBR,
               })}

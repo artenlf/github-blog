@@ -20,19 +20,20 @@ export const PostsContent = styled.div`
   max-width: 26rem;
   padding: 2rem;
 
-  h2 {
+  .title {
     color: ${(props) => props.theme['base-title']};
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
     grid-area: 1 / 1 / 2 / 5;
   }
 
-  span {
+  .date {
     color: ${(props) => props.theme['base-span']};
     font-size: 0.875rem;
     grid-area: 1 / 5 / 2 / 6;
     line-height: 2.3;
-    min-width: 5rem;
+    min-width: max-content;
+    justify-self: end;
   }
 
   .article {
