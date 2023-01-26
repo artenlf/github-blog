@@ -1,3 +1,4 @@
+import { CodeProps } from 'react-markdown/lib/ast-to-react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -11,7 +12,14 @@ export function Article({ issue }: IssueProps) {
     <ArticleContainer>
       <ReactMarkdown
         components={{
-          code({ node, inline, className, children, ...props }: any) {
+          code({
+            node,
+            inline,
+            className,
+            children,
+            style,
+            ...props
+          }: CodeProps) {
             const match = /language-(\w+)/.exec(className || '')
             return !inline && match ? (
               <SyntaxHighlighter
