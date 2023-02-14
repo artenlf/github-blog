@@ -40,7 +40,8 @@ Deployed - v1.0
 
 ### Deploy
 
-- Soon...
+![a screenshot of the home page of application](https://github.com/artenlf/github-blog/blob/main/public/screenshots/1.png)
+![a screenshot of the issues page of application](https://github.com/artenlf/github-blog/blob/main/public/screenshots/2.png)
 
 ### Features
 
