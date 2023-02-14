@@ -36,7 +36,7 @@
 
 ### Status
 
-- In Development
+Deployed - v1.0
 
 ### Deploy
 
@@ -44,4 +44,6 @@
 
 ### Features
 
-- Soon...
+- Read issues and comments from a GitHub repository.
+- Navigate through GitHub issues inside a determined repository.
+- See user's GitHub information, bio and followers.
