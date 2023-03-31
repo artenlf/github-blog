@@ -1,5 +1,28 @@
 # github-blog
 
+### [Click here for English Version](#English)
+
+Aplicação de blog em que os posts são alimentados por solicitações à API do GitHub, trazendo o conteúdo de issues abertas em repositório no GitHub.
+
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **github-blog**
+| :label: Tecnologias | react, typescript, vite, styled-components, API, axios
+| :rocket: URL         | https://github-blog-pi-swart.vercel.app/
+| :fire: Desafio     | https://bit.ly/3JTbHEw
+
+![](https://i.imgur.com/vE6x3Nt.png#vitrinedev)
+
+## Sobre o Projeto
+
+Os usuários podem visualizar e pesquisar os conteúdos postados por meio de issues dentro e um repositório GitHub, tendo acesso também à informações como: autor da publicação, data e quantidade de comentários.
+
+### Objetivos
+
+Este projeto foi um dos requisitos para conclusão do terceiro módulo na trilha React do Ignite Rocketseat. Os objetivos foram: praticar consumo de API (utilizando a API do GitHub), styled-components, roteamento, requests utilizando Axios e React Hooks, como o Context/Context-Selector, além de um uso pontual da biblioteca react-markdown para exibição e formatação dos posts.
+
+## English
+
 ## Index
 
 - [Intro](#Intro)
