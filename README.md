@@ -6,7 +6,7 @@ Aplicação de blog em que os posts são alimentados por solicitações à API d
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
-| :sparkles: Nome        | **github-blog**
+| :sparkles: Nome        | **Github Blog**
 | :label: Tecnologias | react, typescript, vite, styled-components, API, axios
 | :rocket: URL         | https://github-blog-pi-swart.vercel.app/
 | :fire: Desafio     | https://bit.ly/3JTbHEw
